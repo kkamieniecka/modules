@@ -331,6 +331,10 @@ bcftools/view:
   - modules/nf-core/bcftools/view/**
   - tests/modules/nf-core/bcftools/view/**
 
+beacon2ritools:
+  - modules/nf-core/beacon2ritools/**
+  - tests/modules/nf-core/beacon2ritools/**
+
 beagle5/beagle:
   - modules/nf-core/beagle5/beagle/**
   - tests/modules/nf-core/beagle5/beagle/**
