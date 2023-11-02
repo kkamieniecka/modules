@@ -1,18 +1,18 @@
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/modules/yaml-schema.json
-name: "beacon2ritools"
+name: "pxf2bff"
 ## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description:  module that converts Phenopacket PXF (JSON) to BFF (JSON)
 keywords:
-  - sort
-  - example
-  - genomics
+  - beacon
+  - phenopacket
+  - cnv
 tools:
   - "beacon2ritools":
       ## TODO nf-core: Add a description and other details for the software below
-      description: "Script to parse a VCF having SnepEff/SnpSift annotations"
+      description: "Script to transform genomic variations data (VCF) to queryable data (MongoDB)."
       homepage: "None"
-      documentation: "None"
+      documentation: "https://b2ri-documentation.readthedocs.io/en/latest/data-ingestion/"
       tool_dev_url: "None"
       doi: ""
       licence: "['GPL v3']"
@@ -27,10 +27,10 @@ input:
         e.g. `[ id:'test', single_end:false ]`
   
   ## TODO nf-core: Delete / customise this example input
-  - bam:
+  - json:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Phenopacket JSON files
+      pattern: "*.{json}"
 
 ## TODO nf-core: Add a description of all of the variables used as output
 output:
@@ -46,10 +46,10 @@ output:
       description: File containing software versions
       pattern: "versions.yml"
   ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - bff:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: BFF files
+      pattern: "*.{bff}"
 
 authors:
   - "@kkamieniecka"
