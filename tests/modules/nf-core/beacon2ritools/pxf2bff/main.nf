@@ -2,14 +2,14 @@
 
 nextflow.enable.dsl = 2
 
-include { BEACON2RITOOLS } from '../../../../modules/nf-core/beacon2ritools/main.nf'
+include { PXF2BFF } from '../../../../modules/nf-core/beacon2ritools/pxf2bff/main.nf'
 
-workflow test_beacon2ritools {
+workflow test_pxf2bff {
     
     input = [
-        [ id:'test', single_end:false ], // meta map
+        [ id:'test' ], // meta map
         file(params.test_data['sarscov2']['illumina']['test_paired_end_bam'], checkIfExists: true)
     ]
 
-    BEACON2RITOOLS ( input )
+    PXF2BFF ( input )
 }
